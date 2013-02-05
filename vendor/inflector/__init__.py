@@ -3,8 +3,8 @@
 # bermi a-t bermilabs - com
 # See the end of this file for the free software, open source license (BSD-style).
 
-from languages.english import English
-from languages.spanish import Spanish
+from .languages.english import English
+from .languages.spanish import Spanish
 
 class Inflector(object):
     """
@@ -15,7 +15,7 @@ class Inflector(object):
     """
     
     def __init__( self, Inflector = English ) :
-        assert callable(Inflector), "Inflector should be a callable obj"
+        assert isinstance(Inflector, collections.Callable), "Inflector should be a callable obj"
         self.Inflector = apply(Inflector);
         
     def pluralize(self, word) :

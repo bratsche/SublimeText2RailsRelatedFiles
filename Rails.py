@@ -1,5 +1,5 @@
 import sublime, sublime_plugin, os, glob, re
-from vendor.inflector import *
+from .vendor.inflector import *
 
 # @author Luqman Amjad http://luqmanamjad.com
 
@@ -267,7 +267,7 @@ class RailsRelatedFilesCommand(sublime_plugin.TextCommand):
     self.build_files()
     try:
       return self.files[index]
-    except IndexError, e:
+    except IndexError as e:
       return
 
   # Taken from Git Plugin (Changed .active_view() to .view)
